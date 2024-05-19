@@ -16,7 +16,7 @@
                 </div>
                 <a href="index.php" id="homeLink">Home</a>
                 <a href="#" id="categoryLink">Category</a>
-                <a href="login.php" id="loginLink">Login</a>
+                <a href="Login.php" id="loginLink">Login</a>
             </nav>
         </header>
         <main>
@@ -54,7 +54,7 @@
                 <span class="close" onclick="hidePopup()">&times;</span>
                 <h2>Welcome to TalentTrailblazers</h2>
                 <p>Thank you for showing interest. Please login or register to explore more.</p>
-                <a href="login.php">Login</a>
+                <a href="Login.php">Login</a>
                 <a href="Regis.php">Register</a>
             </div>
         </div>

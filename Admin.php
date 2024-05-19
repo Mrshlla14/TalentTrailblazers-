@@ -24,13 +24,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="categories/categories.html">
+				<a href="categories/categories.php">
 					<i class="bx bx-box"></i>
 					<span class="links_name">Category</span>
 				</a>
 			</li>
 			<li>
-				<a href="transaction/aplications.html">
+				<a href="transaction/aplications.php">
 					<i class="bx bx-list-ul"></i>
 					<span class="links_name">Aplications</span>
 				</a>
