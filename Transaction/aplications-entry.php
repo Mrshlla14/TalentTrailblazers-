@@ -9,7 +9,7 @@
 	href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>@Aplications Entry</title>
+   <title>Aplications Entry</title>
 </head>
 <body>
    <div class="sidebar">
@@ -24,13 +24,13 @@
 		</a>
 	   </li>
 	   <li>
-		<a href="../category.php" class="active">
+		<a href="../Categories/category.php" class="active">
 		   <i class="bx bx-box"></i>
 		   <span class="links_name">Category</span>
 		</a>
 	   </li>
 	   <li>
-		<a href="../transaction/aplications.php">
+		<a href="../Transaction/aplications.php">
 		   <i class="bx bx-list-ul"></i>
 		   <span class="links_name">Aplications</span>
 		</a>
@@ -53,7 +53,7 @@
 	   </div>
 	</nav>
 	<div class="home-content">
-	   <h3>Input Data</h3>
+	   <h3>Input Data</h3>S
 	   <div class="form-login">
 		<form action="">
 		   <label for="nama">Nama</label>
@@ -62,12 +62,12 @@
 		   <label for="jenis">Kategori</label>
 		   <input class="input" type="text" name="Kategori"
 				id="jenis" placeholder="Jenis" />
-		   <label for="harga">Tanggal Pendaftaran</label>
+		   <label for="tgl">Tanggal Pendaftaran</label>
 		   <input class="input" type="text" name="Tanggal Pendaftaran"
-				id="harga" placeholder="Biaya" />
-		   <label for="tgl">Biaya</label>
-		   <input class="input" type="date" name="Biaya"
-				id="tgl" style="margin-bottom: 20px" />
+		         id="tgl" placeholder="Tanggal Pendaftaran" />
+		   <label for="harga">Harga</label>
+		   <input class="input" type="date" name="Harga"
+		         id="harga" style="margin-bottom: 20px" />
 		   <button type="submit" class="btn btn-simpan" 
                         name="Simpan">
 			      Simpan

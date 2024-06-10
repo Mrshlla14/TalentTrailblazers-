@@ -1,42 +1,49 @@
+<?php
+session_start();
+if ($_SESSION['username'] == null) {
+	header('location:../login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
 	<meta charset="UTF-8" />
-	<link rel="icon" href="assets/.png" />
+	<link rel="icon" href="../assets/icon.png" />
 	<link rel="stylesheet" href="../css/admin.css" />
 	<!-- Boxicons CDN Link -->
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@Category</title>
+	<title>TalentTrailblazers | Categories</title>
 </head>
 
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<img src="assets1/13.png" alt="" width="200" height="auto" />
+			<i class="bx bx-category"></i>
+			<span class="logo_name">TalentTrailblazers</span>
 		</div>
 		<ul class="nav-links">
 			<li>
-				<a href="../admin.html" class="active">
+				<a href="../admin.php" class="active">
 					<i class="bx bx-grid-alt"></i>
-					<span class="links_name">Home</span>
+					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="../categories.html" class="active">
+				<a href="../Categories/category.php">
 					<i class="bx bx-box"></i>
-					<span class="links_name">Category</span>
+					<span class="links_name">Categories</span>
 				</a>
 			</li>
 			<li>
-				<a href="../transaction/aplications.html">
+				<a href="../Transaction/aplications.php">
 					<i class="bx bx-list-ul"></i>
 					<span class="links_name">Aplications</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../logout.php">
 					<i class="bx bx-log-out"></i>
 					<span class="links_name">Log out</span>
 				</a>
@@ -53,37 +60,59 @@
 			</div>
 		</nav>
 		<div class="home-content">
-			<h1>TALENT CATEGORY</h1>
-			<h2>Selamat datang di halaman Kategori Bakat kami! Di sini, Anda dapat menemukan berbagai jenis bakat dari
-				individu-individu di seluruh daerah. Mulai dari seni, olahraga, teknologi, kerajinan, hingga bakat unik lainnya. Berikut ada beberapa kategori bakat yang tersedia : </h2>
-			   <h3>1. Seni</h3>
-			        <h4>a. Lukisan</h4>
-			        <h4>b. Musik</h4>
-			        <h4>c. Tari</h4>
-			        <h4>d. Teater</h4>
-				<h3>2. Olahraga</h3>
-					<h4>a. Sepak Bola</h4>
-					<h4>b. Volly</h4>
-					<h4>c. Renang</h4>
-					<h4>d. Tinju</h4>	
-				<h3>3. Teknologi</h3>
-					<h4>a. Pemograman</h4>
-					<h4>b. Desain Grafis</h4>
-					<h4>c. Robotik</h4>
-				<h3>4. Kerajinan</h3>
-					<h4>a. Menganyam</h4>
-					<h4>b. Menjahit</h4>
-					<h4>c. Memahat</h4>
-					<h4>d. Menyulam</h4>
-				<h3>5. Bakat Unik</h3>
-					<h4>a. Sulap</h4>
-					<h4>b. Akrobat</h4>
+			<h3>Categories</h3>
+			<button type="button" class="btn btn-tambah">
+				<a href="categories-entry.php">Tambah Data</a>
+			</button>
+			<table class="table-data">
+				<thead>
+					<tr>
+						<th>Categories</th>
+						<th scope="col" style="width: 30%">Description</th>
+						<th scope="col" style="width: 15%">Price</th>
+						<th scope="col" style="width: 20%">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					include '../koneksi.php';
+					$sql = "SELECT * FROM categories";
+					$result = mysqli_query($koneksi, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "
+			   <tr>
+				<td colspan='5' align='center'>
+                           Data Kosong
+                        </td>
+			   </tr>
+				";
+					}
+					while ($data = mysqli_fetch_assoc($result)) {
+						echo "
+                    <tr>
+                      <td>$data[categories]</td>
+					  <td>$data[description]</td>
+                      <td>$data[price]</td>
+                      <td >
+                        <a class='btn-edit' href=categories-edit.php?id=$data[id]>
+                               Edit
+                        </a> | 
+                        <a class='btn-delete' href=categories-hapus.php?id=$data[id]>
+                            Hapus
+                        </a>
+                      </td>
+                    </tr>
+                  ";
+					}
+					?>
+				</tbody>
+			</table>
 		</div>
 	</section>
 	<script>
 		let sidebar = document.querySelector(".sidebar");
 		let sidebarBtn = document.querySelector(".sidebarBtn");
-		sidebarBtn.onclick = function () {
+		sidebarBtn.onclick = function() {
 			sidebar.classList.toggle("active");
 			if (sidebar.classList.contains("active")) {
 				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
@@ -91,5 +120,4 @@
 		};
 	</script>
 </body>
-
 </html>

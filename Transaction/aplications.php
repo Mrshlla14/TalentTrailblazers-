@@ -9,7 +9,7 @@
 	href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>@Aplications</title>
+   <title>Aplications</title>
 </head>
    <body>
 	<div class="sidebar">
@@ -62,8 +62,8 @@
 			<tr>
 			  <th style="width: 20%">Nama</th>
 			  <th>Kategori</th>
+			  <th style="width: 20%">Harga</th>
 			  <th style="width: 20%">Tanggal Pendaftaran</th>
-			  <th style="width: 20%">Biaya</th>
 			  <th>Action</th>
 			</tr>
 		   </thead>
