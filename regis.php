@@ -21,10 +21,10 @@
         <div class="form-login">
                 <h3>Silahkan Daftar Temanku!!</h3>
                 <form action="register-proses.php" method="post">
-                    <input type="email" name="email" placeholder="Email" required /><br />
-                    <input type="text" name="username" placeholder="Username" required /><br />
-                    <input type="password" name="password" placeholder="Password" required /><br />
-                    <button type="submit" name="register">Daftar</button>
+                    <input class="input" type="email" name="email" placeholder="Email" required /><br />
+                    <input class="input" type="text" name="username" placeholder="Username" required /><br />
+                    <input class="input" type="password" name="password" placeholder="Password" required /><br />
+                    <button type="submit" name="regis">Daftar</button>
                 </form>
             </div>
         </main>

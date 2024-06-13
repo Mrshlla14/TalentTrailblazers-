@@ -1,3 +1,9 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:../login.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">	
 <head>
@@ -9,7 +15,7 @@
 	href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Aplications Entry</title>
+   <title>TalentTrailblazers | Aplications Entry</title>
 </head>
 <body>
    <div class="sidebar">
@@ -53,24 +59,26 @@
 	   </div>
 	</nav>
 	<div class="home-content">
-	   <h3>Input Data</h3>S
+	   <h3>Input Data</h3>
 	   <div class="form-login">
-		<form action="">
+	   <form action="aplications-proses.php" method="post" enctype="multipart/form-data">
 		   <label for="nama">Nama</label>
-		   <input class="input" type="text" name="Nama"
+		   <input class="input" type="text" name="nama"
 				id="nama" placeholder="Nama" />
-		   <label for="jenis">Kategori</label>
-		   <input class="input" type="text" name="Kategori"
-				id="jenis" placeholder="Jenis" />
-		   <label for="tgl">Tanggal Pendaftaran</label>
-		   <input class="input" type="text" name="Tanggal Pendaftaran"
-		         id="tgl" placeholder="Tanggal Pendaftaran" />
+		   <label for="kategori">Kategori</label>
+		   <input class="input" type="text" name="kategori"
+				id="kategori" placeholder="Kategori" />
 		   <label for="harga">Harga</label>
-		   <input class="input" type="date" name="Harga"
-		         id="harga" style="margin-bottom: 20px" />
-		   <button type="submit" class="btn btn-simpan" 
-                        name="Simpan">
-			      Simpan
+		   <input class="input" type="text" name="harga"
+		         id="harga" placeholder="Harga" />
+				 <label for="tanggal">Tanggal Pendaftaran</label>
+		   <input class="input" type="date" name="tanggal"
+				 id="tanggal" style="margin-bottom: 20px" />
+			<label for="nomortelp">Nomor HP</label>
+		   <input class="input" type="text" name="nomortelp"
+		         id="nomortelp" placeholder="nomortelp" />
+		   <button type="submit" class="btn btn-simpan" name="Simpan">
+			Simpan
 		   </button>
 		</form>
 	   </div>

@@ -57,7 +57,7 @@
 				<span class="admin_name">Admin</span>
 			</div>
 		</nav>
-		<<div class="home-content">
+		<div class="home-content">
             <h2 id="text">
 			<?php 
              echo $_SESSION['username'];
@@ -65,7 +65,34 @@
             </h2>
           <h3 id="date"></h3>
         </div>
-		</section>
+		<div class="widget">
+                <div class="widget-content">
+                <h3>Total Categories</h3>
+				</div>
+	</section>
+	<center>
+			<style>
+		    .widget {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-bottom: 250px;
+            }
+            .widget-content h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .widget-content p {
+                font-size: 32px;
+                font-weight: bold;
+                color: #333;
+            }
+	   ::first-line</center>
+            </style>
+	</center>
    <script>
 		let sidebar = document.querySelector(".sidebar");
 		let sidebarBtn = document.querySelector(".sidebarBtn");
